@@ -2,6 +2,7 @@ package com.example.mammamia.users;
 
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table
@@ -10,7 +11,8 @@ public class Users {
     public Users() {
 
     }
-    public Users(int id, String username, String name_surname, String password, String nation, String gender, String email, boolean authentication) {
+    public Users(int id, String username, String name_surname, String password, String nation, String gender,
+                 String email, boolean authentication,Date bod) {
         this.id = id;
         this.username = username;
         this.name_surname = name_surname;
@@ -19,6 +21,7 @@ public class Users {
         this.gender = gender;
         this.email = email;
         this.authentication = authentication;
+        this.bod = bod;
     }
 
     public int getId() {
@@ -84,6 +87,13 @@ public class Users {
     public void setAuthentication(boolean authentication) {
         this.authentication = authentication;
     }
+    public Date getBod() {
+        return bod;
+    }
+
+    public void setBod(Date bod) {
+        this.bod = bod;
+    }
     @Override
     public String toString() {
         return "Users{" +
@@ -113,13 +123,15 @@ public class Users {
     private String username;
     private String name_surname;
 
-    private String nameedsge;
 
     private String password;
     private String nation;
     private String gender;
     private String email;
+
     private boolean authentication;
+
+    private Date bod;
 
 
 }
