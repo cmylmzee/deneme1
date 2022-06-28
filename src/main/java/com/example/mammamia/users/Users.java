@@ -11,7 +11,7 @@ public class Users {
     public Users() {
 
     }
-    public Users(int id, String username, String name_surname, String password, String nation, String gender,
+    public Users(Integer id, String username, String name_surname, String password, String nation, String gender,
                  String email, boolean authentication,Date bod) {
         this.id = id;
         this.username = username;
@@ -24,11 +24,11 @@ public class Users {
         this.bod = bod;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -118,7 +118,7 @@ public class Users {
             strategy = GenerationType.SEQUENCE,
             generator = "users_sequence"
     )
-    private int id;
+    private Integer id;
 
     private String username;
     private String name_surname;
