@@ -11,6 +11,7 @@ public class Users {
     public Users() {
 
     }
+ yemekTarifi
     public Users(Integer id, String username, String name_surname, String password, String nation, String gender,
                  String email, boolean authentication,Date bod) {
         this.id = id;
