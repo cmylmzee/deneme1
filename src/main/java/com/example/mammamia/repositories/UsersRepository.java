@@ -1,4 +1,5 @@
-package com.example.mammamia.users;
+package com.example.mammamia.repositories;
+import com.example.mammamia.entities.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

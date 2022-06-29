@@ -1,4 +1,4 @@
-package com.example.mammamia.users;
+package com.example.mammamia.entities;
 
 
 import javax.persistence.*;
@@ -13,7 +13,7 @@ public class Users {
     }
 
     public Users(Integer id, String username, String name_surname, String password, String nation, String gender,
-                 String email, boolean authentication,Date bod) {
+                 String email, Integer roleId,Date dob) {
         this.id = id;
         this.username = username;
         this.name_surname = name_surname;
@@ -21,8 +21,8 @@ public class Users {
         this.nation = nation;
         this.gender = gender;
         this.email = email;
-        this.authentication = authentication;
-        this.bod = bod;
+        this.roleId = roleId;
+        this.dob = dob;
     }
 
     public Integer getId() {
@@ -81,20 +81,22 @@ public class Users {
         this.email = email;
     }
 
-    public boolean isAuthentication() {
-        return authentication;
+    public Integer getRolId() {
+        return roleId;
     }
 
-    public void setAuthentication(boolean authentication) {
-        this.authentication = authentication;
-    }
-    public Date getBod() {
-        return bod;
+    public void setRolId(Integer rolId) {
+        this.roleId = rolId;
     }
 
-    public void setBod(Date bod) {
-        this.bod = bod;
+    public Date getDob() {
+        return dob;
     }
+
+    public void setDob(Date bod) {
+        this.dob = bod;
+    }
+
     @Override
     public String toString() {
         return "Users{" +
@@ -105,9 +107,12 @@ public class Users {
                 ", nation='" + nation + '\'' +
                 ", gender='" + gender + '\'' +
                 ", email='" + email + '\'' +
-                ", authentication=" + authentication +
+                ", rolId=" + roleId +
+                ", bod=" + dob +
                 '}';
     }
+
+
 
     @Id
     @SequenceGenerator(
@@ -122,6 +127,7 @@ public class Users {
 
     private Integer id;
 
+
     private String username;
     private String name_surname;
 
@@ -131,9 +137,11 @@ public class Users {
     private String gender;
     private String email;
 
-    private boolean authentication;
 
-    private Date bod;
+
+    private Integer roleId;
+
+    private Date dob;
 
 
 }
