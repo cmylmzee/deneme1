@@ -136,6 +136,8 @@ public class Users {
             generator = "users_sequence"
     )
 
+
+
     private Integer id;
 
 

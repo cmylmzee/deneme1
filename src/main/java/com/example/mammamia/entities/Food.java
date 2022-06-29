@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table
 public class Food {
 
+
+
     @SequenceGenerator(
             name = "yemek_sequence",
             sequenceName = "yemek_sequence",
@@ -16,6 +18,10 @@ public class Food {
             strategy = GenerationType.SEQUENCE,
             generator = "yemek_sequence"
     )
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false ,insertable = false, updatable = false)
+    private Users user;
 
     @Id
     private Integer id;
