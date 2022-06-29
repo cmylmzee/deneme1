@@ -92,11 +92,11 @@ public class Users {
         this.email = email;
     }
 
-    public Integer getRolId() {
+    public Integer getRoleId() {
         return roleId;
     }
 
-    public void setRolId(Integer rolId) {
+    public void setRoleId(Integer rolId) {
         this.roleId = rolId;
     }
 

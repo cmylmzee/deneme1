@@ -6,6 +6,7 @@ import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +29,9 @@ public class UsersService{
         if(optionalUsers.isPresent()){
             throw  new IllegalStateException("Username is already taken");
         }
+        System.out.println("save öncesi");
         repository.save(user);
+        System.out.println("save sonrası");
 
     }
 
@@ -41,6 +44,33 @@ public class UsersService{
         repository.deleteById(userId);
 
     }
+    @Transactional // UPDATE ETMESİ İÇİN YANİ ÜSTÜNE YAZMASI İÇİN GEREKLİ BİR ANOTASYON
+
+    public void changePassword(Integer id, String password ){
+        Optional<Users> optionalUsers = repository.findUsersById(id);
+        if(!optionalUsers.isPresent()){
+            throw new IllegalStateException("User not found");
+        }
+        optionalUsers.get().setPassword(password);
+    }
+    @Transactional
+    public  void changeRoleId(Integer id, Integer roleId){
+        Optional<Users> optionalUsers = repository.findUsersById(id);
+        if(!optionalUsers.isPresent()){
+            throw new IllegalStateException("User not found");
+        }
+        optionalUsers.get().setRoleId(roleId);
+    }
+    @Transactional
+    public  void changeEmail(Integer id, String email){
+        Optional<Users> optionalUsers = repository.findUsersById(id);
+        if(!optionalUsers.isPresent()){
+            throw new IllegalStateException("User not found");
+        }
+        optionalUsers.get().setEmail(email);
+    }
+
+
 
 
 

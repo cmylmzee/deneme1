@@ -1,4 +1,4 @@
-package com.example.mammamia;
+/*package com.example.mammamia;
 
 import com.example.mammamia.entities.Users;
 import com.example.mammamia.repositories.UsersRepository;
@@ -25,4 +25,4 @@ public class UsersConfig {
         };
 
     }
-}
+}*/
