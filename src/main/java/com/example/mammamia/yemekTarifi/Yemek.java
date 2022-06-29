@@ -20,6 +20,7 @@ public class Yemek {
         this.malzemeler = malzemeler;
         this.sef_ismi = sef_ismi;
         this.id = id;
+        s
     }
 
 
