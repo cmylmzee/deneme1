@@ -25,6 +25,17 @@ public class Users {
         this.dob = dob;
     }
 
+    public Users(String username, String name_surname, String password, String nation, String gender, String email, Integer roleId, Date dob) {
+        this.username = username;
+        this.name_surname = name_surname;
+        this.password = password;
+        this.nation = nation;
+        this.gender = gender;
+        this.email = email;
+        this.roleId = roleId;
+        this.dob = dob;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -126,6 +137,8 @@ public class Users {
     )
 
     private Integer id;
+
+
 
 
     private String username;
