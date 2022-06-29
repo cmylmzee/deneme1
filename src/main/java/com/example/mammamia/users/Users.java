@@ -11,6 +11,7 @@ public class Users {
     public Users() {
 
     }
+
     public Users(Integer id, String username, String name_surname, String password, String nation, String gender,
                  String email, boolean authentication,Date bod) {
         this.id = id;
@@ -118,6 +119,7 @@ public class Users {
             strategy = GenerationType.SEQUENCE,
             generator = "users_sequence"
     )
+
     private Integer id;
 
     private String username;
